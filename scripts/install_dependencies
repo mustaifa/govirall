@@ -1,0 +1,8 @@
+#!/bin/bash
+sudo apt-get update
+ARG DEBIAN_FRONTEND=noninteractive
+sudo apt-get update && apt-get install -y tzdata
+sudo unlink /etc/localtime
+sudo ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+sudo apt-get -y install apache2
+sudo rm /var/www/html/index.html
